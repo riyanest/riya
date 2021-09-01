@@ -80,7 +80,7 @@ if (currentTheme) {
         </div>
         
         <ul className="navbarlist">         
-                    <button className="navbarbutton"className="switchsvg exitbar" type="button" onClick={()=>control(0)}>X</button>
+                    <button className="navbarbutton switchsvg exitbar" type="button" onClick={()=>control(0)}>X</button>
                     <li className="heading switchsvg" onClick=""><a>Services</a></li>
                     <li className="heading switchsvg" onClick=""><a>Chat-with-us</a></li>
                     <li className="heading switchsvg" onClick=""><a>Scope</a></li>
@@ -89,13 +89,13 @@ if (currentTheme) {
                     <div className="theme-switch-wrapper">
                             <label className="theme-switch" htmlFor="checkbox">
                         <input type="checkbox" id="checkbox" />
-                        <div class="slider round"></div>
+                        <div className="slider round"></div>
                         </label>
                         </div>
                         </li>
         </ul>
         
-        <button className="navbarbutton" className="switch" onClick={()=>control(1)}>
+        <button className="navbarbutton switch" onClick={()=>control(1)}>
                 <svg className="switchsvg" x="0px" y="0px" viewBox="0 0 394.971 394.971" style={{wclassNameth:"30px",height:"30px",enableBackground:"new 0 0 394.971 394.971"}} >
                 <path d="M56.424,146.286c-28.277,0-51.2,22.923-51.2,51.2s22.923,51.2,51.2,51.2s51.2-22.923,51.2-51.2
                     S84.701,146.286,56.424,146.286z M56.424,227.788L56.424,227.788c-16.735,0-30.302-13.567-30.302-30.302

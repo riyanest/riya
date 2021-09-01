@@ -22,7 +22,7 @@ export default function Home() {
       <main className="main">
 
       </main>
-<div class="elfsight-app-d195f209-3314-47fc-829b-b568adcc1731"></div>
+<div className="elfsight-app-d195f209-3314-47fc-829b-b568adcc1731"></div>
       <br/>
       <br/>
       <br/>

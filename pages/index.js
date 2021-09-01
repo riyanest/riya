@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 
 import dynamic from 'next/dynamic'
 import Header from "../components/header"
-const Footer = dynamic(() => import("../components/Footer"), {
+const Footer = dynamic(() => import("../components/footer"), {
   ssr: false
 })
 export default function Home() {

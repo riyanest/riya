@@ -4,7 +4,7 @@ function Footer(props) {
 
         <div className="fcontent resizable yarr">
 
-                <div id="contact-us" className="cardlayout" >
+                <div id="contact-us" className="cardlayout" style={{marginTop:"0px"}} >
                         <ul className="list ">
                                 <li>
                                 <h1 id="logofont">Riya Qureshi</h1>

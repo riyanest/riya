@@ -12,11 +12,20 @@
 	--bg-color: #292922;
 	--heading-color: #f4eded;
 }
+a {
+	z-index: 0;
+}
 body {
 	background-color: var(--bg-color);
 }
 #logofont {
 	color: var(--font-color);
+}
+#flink {
+	color: var(--font-color);
+}
+#flink:hover {
+	color: var(--secondary-color);
 }
 .main {
 	background-color: var(--bg-color);
@@ -26,6 +35,8 @@ body {
 }
 .buttonsbar00 {
 	background-color: var(--primary-color);
+	opacity: 0.5;
+	align-items: center;
 }
 .softbox {
 	color: var(--font-color);
@@ -59,19 +70,18 @@ a:hover {
 	box-shadow: 2px 3px 3px;
 }
 .heading {
-	color: var(--beta);
+	color: var(--primary-color);
 }
 .heading:hover {
-	color: var(--nustasilver);
-	border-color: var(--nustasilver);
+	color: var(--secondary-color);
 }
 .switchsvg {
-	fill: var(--alpha);
-	color: var(--alpha);
+	fill: var(--font-color);
+	color: var(--font-color);
 }
 .switchsvg:hover {
-	fill: var(--nustasilver);
-	color: var(--nustasilver);
+	fill: var(--secondary-color);
+	color: var(--secondary-color);
 }
 @keyframes yolo {
 	from {
@@ -96,17 +106,17 @@ a:hover {
 	fill: var(--alpha);
 }
 .contactheader {
-	color: var(--alpha);
+	color: var(--bg-color);
 }
 .contactfield {
-	color: var(--alpha);
+	color: var(--bg-color);
 }
 .contactbutton {
-	color: var(--alpha);
+	color: var(--bg-color);
 }
 .contactbutton:hover {
-	background-color: var(--alpha);
-	color: #97bc62ff;
+	border: 2px solid var(--font-color);
+	color: var(--font-color);
 }
 .servicelist {
 	background-color: var(--alpha);
@@ -118,4 +128,9 @@ a:hover {
 }
 .copywright {
 	background-color: var(--secondary-color);
+}
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: var(--bg-color);
+	opacity: 1; /* Firefox */
 }

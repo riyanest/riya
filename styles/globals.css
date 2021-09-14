@@ -7,12 +7,6 @@ body {
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-a {
-	color: #181a1b;
-	color: inherit;
-	text-decoration: none;
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -27,7 +21,6 @@ a {
 }
 
 .main {
-	padding: 5rem 0;
 	flex: 1;
 	display: flex;
 	flex-direction: column;
@@ -42,24 +35,6 @@ a {
 	/* display: flex; */
 	justify-content: center;
 	align-items: center;
-}
-
-.footer a {
-	/* display: flex; */
-	justify-content: center;
-	align-items: center;
-	flex-grow: 1;
-}
-
-.title a {
-	color: 0.007f3;
-	text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-	text-decoration: underline;
 }
 
 .title {
@@ -241,9 +216,8 @@ a {
 }
 #mainbar {
 	justify-content: space-between;
-	height: 70px;
+	height: 60px;
 	width: 100%;
-	top: 0px;
 	display: flex;
 	transition: 0.5s;
 }
@@ -362,4 +336,165 @@ input:checked + .slider:before {
 
 .slider.round:before {
 	border-radius: 50%;
+}
+@media only screen and (max-width: 600px) {
+	#imgpic {
+		overflow: hidden;
+		width: initial;
+	}
+	.yarr {
+		display: block;
+	}
+	.resizable {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media only screen and (min-width: 600px) {
+	.yarr {
+		display: block;
+	}
+	.resizable {
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.yarr {
+		display: flex;
+	}
+	.resizable {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.yarr {
+		display: flex;
+	}
+	.resizable {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.yarr {
+		display: flex;
+	}
+	.resizable {
+		width: 80%;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+}
+.overflowhidden {
+	overflow: hidden;
+}
+.list {
+	list-style-type: none;
+	justify-content: center;
+	text-align: center;
+}
+#hl {
+	width: 0px;
+
+	border-left: 1px solid grey;
+	margin-right: 10px;
+}
+#verticalline {
+	border-top: 2px solid grey;
+}
+
+.heading {
+	border: none;
+}
+.heading:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+	transition: 0.2s;
+}
+#banner {
+	height: 600px;
+	border-bottom-left-radius: 32px;
+	border-bottom-right-radius: 32px;
+	overflow: hidden;
+}
+.contactfield {
+	width: 80%;
+	margin: 1%;
+	height: 30px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid var(--bg-color);
+	font-size: 18px;
+	border-radius: 4px;
+}
+.contactbutton {
+	margin: 20px;
+	border: none;
+
+	font-size: 18px;
+	border-radius: 4px;
+	transition: 0.5s;
+	background-color: transparent;
+	border: 1px solid var(--bg-color);
+}
+.typebox {
+	width: 180px;
+	height: 250px;
+	padding-left: 30px;
+	margin: 10px;
+	border: 1px solid black;
+	border-color: var(--bg-color);
+	border-radius: 4px;
+	transition: 0.1s;
+	padding: 20px;
+	box-shadow: none;
+	background-color: transparent;
+}
+.typebox:hover {
+	box-shadow: 2px 3px 3px;
+}
+.servicelist {
+	list-style-type: none;
+	border: 1px solid black;
+	background-color: b;
+	border-radius: 4px;
+	box-shadow: 2px 3px 3px black;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.bannertextwrapper:before {
+	content: "Marketing";
+	transition: opacity 2s;
+	animation: fadeIn 10s linear infinite;
+}
+
+@-webkit-keyframes fadeIn {
+	0% {
+		content: "MARKETING";
+	}
+	25% {
+		content: "MANAGEMENT";
+	}
+	50% {
+		content: "CLIENT SERVICES";
+	}
+	75% {
+		content: "LEADER";
+	}
+	100% {
+		content: "TEAM PLAYER";
+	}
+}
+.hovcard:hover {
+	transition: 0.5s;
+	box-shadow: none;
+}
+.hovcard:hover {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

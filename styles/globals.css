@@ -125,11 +125,11 @@ body {
 	}
 	.navbarlist {
 		width: 100%;
-		position: absolute;
-		top: 0px;
+		position: fixed;
+		bottom: 0px;
 		left: 0px;
-		z-index: 25;
 		height: 0px;
+		margin: 0px;
 	}
 }
 @media only screen and (min-width: 600px) {
@@ -141,11 +141,11 @@ body {
 	}
 	.navbarlist {
 		width: 100%;
-		position: absolute;
-		top: 0px;
+		position: fixed;
+		bottom: 0px;
 		left: 0px;
-		z-index: 25;
 		height: 0px;
+		margin: 0px;
 	}
 }
 @media only screen and (min-width: 768px) {
@@ -160,10 +160,11 @@ body {
 	}
 	.navbarlist {
 		width: 100%;
-		position: absolute;
-		top: 0px;
+		position: fixed;
+		bottom: 0px;
 		left: 0px;
 		height: 0px;
+		margin: 0px;
 	}
 }
 @media only screen and (min-width: 992px) {
@@ -259,11 +260,13 @@ body {
 	list-style-type: none;
 	transition: 0.5s;
 	overflow: hidden;
+	opacity: 1;
+	z-index: 9999;
 }
 .buttonsbar00 {
 	display: flex;
+	opacity: 1;
 	justify-content: flex-end;
-
 	transition: 0.5s;
 }
 
@@ -347,8 +350,6 @@ input:checked + .slider:before {
 	}
 	.resizable {
 		width: 90%;
-		margin-left: auto;
-		margin-right: auto;
 	}
 }
 @media only screen and (min-width: 600px) {
@@ -357,8 +358,6 @@ input:checked + .slider:before {
 	}
 	.resizable {
 		width: 90%;
-		margin-left: auto;
-		margin-right: auto;
 	}
 }
 @media only screen and (min-width: 768px) {
@@ -367,8 +366,6 @@ input:checked + .slider:before {
 	}
 	.resizable {
 		width: 80%;
-		margin-left: 10%;
-		margin-right: 10%;
 	}
 }
 @media only screen and (min-width: 992px) {
@@ -377,8 +374,6 @@ input:checked + .slider:before {
 	}
 	.resizable {
 		width: 80%;
-		margin-left: 10%;
-		margin-right: 10%;
 	}
 }
 @media only screen and (min-width: 1200px) {
@@ -387,8 +382,6 @@ input:checked + .slider:before {
 	}
 	.resizable {
 		width: 80%;
-		margin-left: 10%;
-		margin-right: 10%;
 	}
 }
 .overflowhidden {
@@ -398,6 +391,10 @@ input:checked + .slider:before {
 	list-style-type: none;
 	justify-content: center;
 	text-align: center;
+}
+.resizable {
+	margin-left: auto;
+	margin-right: auto;
 }
 #hl {
 	width: 0px;

@@ -2,25 +2,53 @@
 import React, { useState } from "react"
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import cortobanner from "../public/banner01.png";
-import avatars from "../public/banner.png";
+
+import { Carousel } from 'antd';
+
+
+
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+
+
+
 import 'antd/dist/antd.css';
-import {List,Carousel} from 'antd';  
 import dynamic from 'next/dynamic';
 import Header from "../components/header";
 import Contactform from "../components/contactform";
 const Footer = dynamic(() => import("../components/footer"), {  ssr: false});
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const contentStyle = {
-  height: '400px',
+  padding: "30px",
+  height: '550px',
   color: 'var(--font-color)',
-  backgroundColor:"#c62368"
+  backgroundColor:"#01579b"
 
 };
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 300,
+  },
+  media: {
+    height: 140,
+  },
+});
 function Home() {
-
+  const classes = useStyles();
+  const isDesktopOrLaptop = useMediaQuery('(min-width: 1200px)')
+  const isBigScreen = useMediaQuery('(max-width: 768px)')
+  const tablet = useMediaQuery('(min-width: 600px)')
+  const phone = useMediaQuery('(max-width: 600px)')
+  const isTablet = useMediaQuery('(min-width: 992px)')
+  const isPortrait = useMediaQuery('(orientation: portrait)')
   return (    
     <div style={{position: 'relative'}}>
       <Head>
@@ -30,7 +58,21 @@ function Home() {
       </Head>
       <Header/>
 <div style={{backgroundColor:" var(--bg-color)",overflow: 'hidden',width:"100%"}}>
-  <div className="yarr">
+  <div className="yarr" style={{justifyContent: 'space-evenly'}}>
+
+  <u  
+        style={{color:"var(--font-color)",
+        width:"220px",
+        border:"2px solid var(--secondary-color)",
+        padding:"10px",
+        backgroundColor:" var(--primary-color)",
+        margin:"5%",
+        height:"180px"
+        ,display:"block" }}>
+          <h5 style={{color:"var(--font-color)"}}>Hi, I am</h5>
+          <h2 style={{fontSize:"30px",color:"var(--font-color)"}} >RIYA<br/> QURESHI</h2>
+          <h4 style={{textAlign:"center",color:"var(--font-color)"}}> <span className="bannertextwrapper">    </span></h4>
+        </u>
   
     <img className="hovcard"
     src="./riyadp.jpeg" 
@@ -42,17 +84,9 @@ function Home() {
       marginRight: "0px",
       width: "320px",border:"3px solid var(--secondary-color)"}}></img>
 
-        <u  
-        style={{color:"var(--font-color)",position:"absolute",top:"0%",left:"10%",marginTop:"150px" }}>
-          <h5 style={{color:"var(--font-color)"}}>Hi, I am</h5>
-          <h2 style={{fontSize:"30px",color:"var(--font-color)"}} >RIYA<br/> QURESHI</h2>
-          <h4 style={{textAlign:"center",color:"var(--font-color)"}}> <span className="bannertextwrapper">    </span></h4>
-        </u>
-
-
         <ul className="hovcard"
-        style={{listStyleType:"none",border:"2px solid var(--secondary-color)",padding:"10px",backgroundColor:" var(--primary-color)",margin:"5%",width:"320px",borderRadius:"2%",fontSize:"18px",height:"400px",fontWeight:"100",}}>
-        <li><h3 style={{fontWeight:"bold",textDecoration:"underline"}}>Skills Summary</h3></li>
+        style={{color:"var(--font-color)",listStyleType:"none",border:"2px solid var(--secondary-color)",padding:"10px",backgroundColor:" var(--primary-color)",margin:"5%",width:"320px",borderRadius:"2%",fontSize:"18px",height:"400px",fontWeight:"100",}}>
+        <li><h3 style={{fontWeight:"bold",color:"var(--font-color)",textDecoration:"underline"}}>Skills Summary</h3></li>
         <li>Marketing</li>
         <li>Social Media Management</li>
         <li>Organization</li>
@@ -66,36 +100,124 @@ function Home() {
         <li>Coordination</li>
         </ul>        
 
-
-
-
-
-
-
   </div>
 
-  <svg id="visual" viewBox="0 0 1990 340" width="1990" height="340"  version="1.1"><rect x="0" y="0" width="1990" height="340" fill="var(--bg-color)"></rect><path d="M0 110L33.2 102.8C66.3 95.7 132.7 81.3 199 76.3C265.3 71.3 331.7 75.7 398 86.2C464.3 96.7 530.7 113.3 597 121.3C663.3 129.3 729.7 128.7 796 128.7C862.3 128.7 928.7 129.3 995 119C1061.3 108.7 1127.7 87.3 1194 87.3C1260.3 87.3 1326.7 108.7 1393 109.5C1459.3 110.3 1525.7 90.7 1592 89.5C1658.3 88.3 1724.7 105.7 1791 118C1857.3 130.3 1923.7 137.7 1956.8 141.3L1990 145L1990 341L1956.8 341C1923.7 341 1857.3 341 1791 341C1724.7 341 1658.3 341 1592 341C1525.7 341 1459.3 341 1393 341C1326.7 341 1260.3 341 1194 341C1127.7 341 1061.3 341 995 341C928.7 341 862.3 341 796 341C729.7 341 663.3 341 597 341C530.7 341 464.3 341 398 341C331.7 341 265.3 341 199 341C132.7 341 66.3 341 33.2 341L0 341Z" fill="#eb8686"></path><path d="M0 120L33.2 122.7C66.3 125.3 132.7 130.7 199 144.7C265.3 158.7 331.7 181.3 398 184.5C464.3 187.7 530.7 171.3 597 167.5C663.3 163.7 729.7 172.3 796 178.2C862.3 184 928.7 187 995 180.2C1061.3 173.3 1127.7 156.7 1194 150.7C1260.3 144.7 1326.7 149.3 1393 150.3C1459.3 151.3 1525.7 148.7 1592 149.2C1658.3 149.7 1724.7 153.3 1791 149C1857.3 144.7 1923.7 132.3 1956.8 126.2L1990 120L1990 341L1956.8 341C1923.7 341 1857.3 341 1791 341C1724.7 341 1658.3 341 1592 341C1525.7 341 1459.3 341 1393 341C1326.7 341 1260.3 341 1194 341C1127.7 341 1061.3 341 995 341C928.7 341 862.3 341 796 341C729.7 341 663.3 341 597 341C530.7 341 464.3 341 398 341C331.7 341 265.3 341 199 341C132.7 341 66.3 341 33.2 341L0 341Z" fill="#e16978"></path><path d="M0 187L33.2 196.5C66.3 206 132.7 225 199 224C265.3 223 331.7 202 398 203.5C464.3 205 530.7 229 597 228.7C663.3 228.3 729.7 203.7 796 195.5C862.3 187.3 928.7 195.7 995 201.8C1061.3 208 1127.7 212 1194 215.8C1260.3 219.7 1326.7 223.3 1393 229.2C1459.3 235 1525.7 243 1592 237.7C1658.3 232.3 1724.7 213.7 1791 201.8C1857.3 190 1923.7 185 1956.8 182.5L1990 180L1990 341L1956.8 341C1923.7 341 1857.3 341 1791 341C1724.7 341 1658.3 341 1592 341C1525.7 341 1459.3 341 1393 341C1326.7 341 1260.3 341 1194 341C1127.7 341 1061.3 341 995 341C928.7 341 862.3 341 796 341C729.7 341 663.3 341 597 341C530.7 341 464.3 341 398 341C331.7 341 265.3 341 199 341C132.7 341 66.3 341 33.2 341L0 341Z" fill="#d54a6f"></path><path d="M0 275L33.2 273C66.3 271 132.7 267 199 265C265.3 263 331.7 263 398 269C464.3 275 530.7 287 597 289.7C663.3 292.3 729.7 285.7 796 276C862.3 266.3 928.7 253.7 995 257.2C1061.3 260.7 1127.7 280.3 1194 282C1260.3 283.7 1326.7 267.3 1393 263.2C1459.3 259 1525.7 267 1592 274.2C1658.3 281.3 1724.7 287.7 1791 291.2C1857.3 294.7 1923.7 295.3 1956.8 295.7L1990 296L1990 341L1956.8 341C1923.7 341 1857.3 341 1791 341C1724.7 341 1658.3 341 1592 341C1525.7 341 1459.3 341 1393 341C1326.7 341 1260.3 341 1194 341C1127.7 341 1061.3 341 995 341C928.7 341 862.3 341 796 341C729.7 341 663.3 341 597 341C530.7 341 464.3 341 398 341C331.7 341 265.3 341 199 341C132.7 341 66.3 341 33.2 341L0 341Z" fill="#c62368"></path></svg>
+
+<svg id="visual" viewBox="0 0 1900 340" width="1900" height="340"version="1.1"><g stroke-width="1" strokeLinejoin="bevel"><path d="M905.9 131.3L1006.1 214.7L1014.1 89.3Z" fill="#13518e" stroke="#13518e"></path><path d="M905.9 131.3L885.9 253.7L1006.1 214.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1140.2 86.3L1045.1 0L1014.1 89.3Z" fill="#252b37" stroke="#252b37"></path><path d="M1014.1 89.3L849.9 0L905.9 131.3Z" fill="#244067" stroke="#244067"></path><path d="M1006.1 214.7L1140.2 86.3L1014.1 89.3Z" fill="#252b37" stroke="#252b37"></path><path d="M1045.1 0L849.9 0L1014.1 89.3Z" fill="#263043" stroke="#263043"></path><path d="M905.9 131.3L747.8 142.3L885.9 253.7Z" fill="#252b37" stroke="#252b37"></path><path d="M885.9 253.7L1024.1 340L1006.1 214.7Z" fill="#13518e" stroke="#13518e"></path><path d="M1006.1 214.7L1169.2 207.7L1140.2 86.3Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M1024.1 340L1169.2 207.7L1006.1 214.7Z" fill="#01579b" stroke="#01579b"></path><path d="M734.8 340L878.9 340L885.9 253.7Z" fill="#263043" stroke="#263043"></path><path d="M885.9 253.7L878.9 340L1024.1 340Z" fill="#01579b" stroke="#01579b"></path><path d="M849.9 0L747.8 142.3L905.9 131.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1322.4 87.3L1172.2 0L1140.2 86.3Z" fill="#244067" stroke="#244067"></path><path d="M1140.2 86.3L1172.2 0L1045.1 0Z" fill="#27364f" stroke="#27364f"></path><path d="M1024.1 340L1170.2 340L1169.2 207.7Z" fill="#212121" stroke="#212121"></path><path d="M1169.2 207.7L1322.4 87.3L1140.2 86.3Z" fill="#23262c" stroke="#23262c"></path><path d="M747.8 142.3L712.8 228.7L885.9 253.7Z" fill="#252b37" stroke="#252b37"></path><path d="M849.9 0L731.8 0L747.8 142.3Z" fill="#252b37" stroke="#252b37"></path><path d="M747.8 142.3L606.6 141.3L712.8 228.7Z" fill="#214674" stroke="#214674"></path><path d="M712.8 228.7L734.8 340L885.9 253.7Z" fill="#01579b" stroke="#01579b"></path><path d="M1170.2 340L1306.4 243.7L1169.2 207.7Z" fill="#214674" stroke="#214674"></path><path d="M1306.4 243.7L1322.4 87.3L1169.2 207.7Z" fill="#244067" stroke="#244067"></path><path d="M731.8 0L606.6 141.3L747.8 142.3Z" fill="#23262c" stroke="#23262c"></path><path d="M712.8 228.7L610.6 253.7L734.8 340Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1322.4 87.3L1323.4 0L1172.2 0Z" fill="#23262c" stroke="#23262c"></path><path d="M606.6 141.3L610.6 253.7L712.8 228.7Z" fill="#13518e" stroke="#13518e"></path><path d="M1170.2 340L1312.4 340L1306.4 243.7Z" fill="#252b37" stroke="#252b37"></path><path d="M1306.4 243.7L1448.5 129.3L1322.4 87.3Z" fill="#23262c" stroke="#23262c"></path><path d="M458.5 340L601.6 340L610.6 253.7Z" fill="#263043" stroke="#263043"></path><path d="M610.6 253.7L601.6 340L734.8 340Z" fill="#252b37" stroke="#252b37"></path><path d="M731.8 0L570.6 0L606.6 141.3Z" fill="#27364f" stroke="#27364f"></path><path d="M606.6 141.3L451.5 199.7L610.6 253.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1455.5 223.7L1448.5 129.3L1306.4 243.7Z" fill="#01579b" stroke="#01579b"></path><path d="M1322.4 87.3L1455.5 0L1323.4 0Z" fill="#263043" stroke="#263043"></path><path d="M1443.5 340L1455.5 223.7L1306.4 243.7Z" fill="#263043" stroke="#263043"></path><path d="M1579.7 0L1455.5 0L1448.5 129.3Z" fill="#244067" stroke="#244067"></path><path d="M1448.5 129.3L1455.5 0L1322.4 87.3Z" fill="#23262c" stroke="#23262c"></path><path d="M1312.4 340L1443.5 340L1306.4 243.7Z" fill="#01579b" stroke="#01579b"></path><path d="M419.5 137.3L451.5 199.7L606.6 141.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M451.5 199.7L458.5 340L610.6 253.7Z" fill="#212121" stroke="#212121"></path><path d="M570.6 0L419.5 137.3L606.6 141.3Z" fill="#01579b" stroke="#01579b"></path><path d="M451.5 199.7L320.3 340L458.5 340Z" fill="#244067" stroke="#244067"></path><path d="M570.6 0L433.5 0L419.5 137.3Z" fill="#01579b" stroke="#01579b"></path><path d="M1629.7 106.3L1579.7 0L1448.5 129.3Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M1598.7 231.7L1448.5 129.3L1455.5 223.7Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M1597.7 340L1598.7 231.7L1455.5 223.7Z" fill="#212121" stroke="#212121"></path><path d="M1443.5 340L1597.7 340L1455.5 223.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1598.7 231.7L1629.7 106.3L1448.5 129.3Z" fill="#01579b" stroke="#01579b"></path><path d="M1754.8 134.3L1629.7 106.3L1598.7 231.7Z" fill="#263043" stroke="#263043"></path><path d="M433.5 0L316.3 88.3L419.5 137.3Z" fill="#01579b" stroke="#01579b"></path><path d="M270.3 249.7L320.3 340L451.5 199.7Z" fill="#01579b" stroke="#01579b"></path><path d="M270.3 249.7L451.5 199.7L419.5 137.3Z" fill="#252b37" stroke="#252b37"></path><path d="M433.5 0L296.3 0L316.3 88.3Z" fill="#244067" stroke="#244067"></path><path d="M316.3 88.3L270.3 249.7L419.5 137.3Z" fill="#244067" stroke="#244067"></path><path d="M169.2 254.7L270.3 249.7L147.2 94.3Z" fill="#212121" stroke="#212121"></path><path d="M1755.8 240.7L1754.8 134.3L1598.7 231.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1629.7 106.3L1778.8 0L1579.7 0Z" fill="#13518e" stroke="#13518e"></path><path d="M1597.7 340L1755.8 240.7L1598.7 231.7Z" fill="#252b37" stroke="#252b37"></path><path d="M1597.7 340L1752.8 340L1755.8 240.7Z" fill="#244067" stroke="#244067"></path><path d="M147.2 94.3L270.3 249.7L316.3 88.3Z" fill="#252b37" stroke="#252b37"></path><path d="M270.3 249.7L145.2 340L320.3 340Z" fill="#13518e" stroke="#13518e"></path><path d="M1900 83.3L1778.8 0L1754.8 134.3Z" fill="#13518e" stroke="#13518e"></path><path d="M1754.8 134.3L1778.8 0L1629.7 106.3Z" fill="#263043" stroke="#263043"></path><path d="M1900 206.7L1754.8 134.3L1755.8 240.7Z" fill="#13518e" stroke="#13518e"></path><path d="M296.3 0L166.2 0L316.3 88.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M166.2 0L147.2 94.3L316.3 88.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M0 340L145.2 340L169.2 254.7Z" fill="#23262c" stroke="#23262c"></path><path d="M169.2 254.7L145.2 340L270.3 249.7Z" fill="#23262c" stroke="#23262c"></path><path d="M1900 340L1900 206.7L1755.8 240.7Z" fill="#23262c" stroke="#23262c"></path><path d="M1900 206.7L1900 83.3L1754.8 134.3Z" fill="#01579b" stroke="#01579b"></path><path d="M1900 83.3L1900 0L1778.8 0Z" fill="#244067" stroke="#244067"></path><path d="M1752.8 340L1900 340L1755.8 240.7Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M0 0L0 140.3L147.2 94.3Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M147.2 94.3L0 203.7L169.2 254.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M0 140.3L0 203.7L147.2 94.3Z" fill="#212121" stroke="#212121"></path><path d="M166.2 0L0 0L147.2 94.3Z" fill="#01579b" stroke="#01579b"></path><path d="M0 203.7L0 340L169.2 254.7Z" fill="#27364f" stroke="#27364f"></path></g></svg>
  
 </div>
-      <Carousel autoplay style={contentStyle}>
+
+{isDesktopOrLaptop && isTablet ?
+<Grid style={{backgroundColor:"var(--secondary-color)",padding:"20px"}} container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+    <Grid item xs={2} sm={4} md={4}>
+      <Card className="resizable" style={{width:"300px",height:"460px"}}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="November 2019 to March 2021💫"
+                width="300"
+                image="banner01.png"
+                title="November 2019 to March 2021💫"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                November 2019 to March 2021💫
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" href="https://www.instagram.com/p/COvJq4_nm9u/">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
+    </Grid>
+    <Grid item xs={2} sm={4} md={4} >
+    <Card className="resizable" style={{width:"300px",height:"460px"}}>
+            <CardActionArea>
+              <CardMedia
+                alt="Highlights of my day. :)"
+               // width="300"
+               component="video"
+                src="highlights.webm"
+                autoPlay
+                loop
+                controls
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                Highlights of my day. :)
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" href="https://www.instagram.com/p/COvJq4_nm9u/">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
+          </Grid>
+</Grid>
+:null}
+{phone||isBigScreen&&tablet ? 
+        <Carousel  autoplay effect="fade" style={contentStyle}>
         <div>
-          <span style={contentStyle}></span>
+        <Card className="resizable" style={{width:"300px",height:"460px"}}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                alt="November 2019 to March 2021💫"
+                width="300"
+                image="banner01.png"
+                title="November 2019 to March 2021💫"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                November 2019 to March 2021💫
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" href="https://www.instagram.com/p/COvJq4_nm9u/">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
         </div>
-        <div>
-          <span style={contentStyle}></span>
+        <div className="resizable">
+        <Card className="resizable" style={{width:"300px",height:"460px"}}>
+            <CardActionArea>
+              <CardMedia
+                alt="Highlights of my day. :)"
+               // width="300"
+               component="video"
+                src="highlights.webm"
+                autoPlay
+                controls
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                Highlights of my day. :)
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" href="https://www.instagram.com/p/COvJq4_nm9u/">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
         </div>
-        <div>
-          <span style={contentStyle}></span>
-        </div>
-        <div>
-          <span style={contentStyle}></span>
-        </div>
+      
+      
       </Carousel>
+:null    }
+
 
     <Contactform/>
 
     <div style={{width:"100%",overflow:"hidden",height:"340"}}>
-      <svg id="visual" viewBox="0 0 1990 340" width="1990" height="340"  version="1.1"><rect x="0" y="0" width="1990" height="340" fill="var(--primary-color)"></rect><path d="M0 180L41.5 181.2C83 182.3 166 184.7 249 178.2C332 171.7 415 156.3 497.8 147.7C580.7 139 663.3 137 746.2 133.3C829 129.7 912 124.3 995 129.5C1078 134.7 1161 150.3 1244 149.3C1327 148.3 1410 130.7 1492.8 133C1575.7 135.3 1658.3 157.7 1741.2 161.8C1824 166 1907 152 1948.5 145L1990 138L1990 0L1948.5 0C1907 0 1824 0 1741.2 0C1658.3 0 1575.7 0 1492.8 0C1410 0 1327 0 1244 0C1161 0 1078 0 995 0C912 0 829 0 746.2 0C663.3 0 580.7 0 497.8 0C415 0 332 0 249 0C166 0 83 0 41.5 0L0 0Z" fill="#e1d8cb"></path><path d="M0 137L41.5 129.8C83 122.7 166 108.3 249 114.8C332 121.3 415 148.7 497.8 149.7C580.7 150.7 663.3 125.3 746.2 120C829 114.7 912 129.3 995 136.7C1078 144 1161 144 1244 149.3C1327 154.7 1410 165.3 1492.8 162.3C1575.7 159.3 1658.3 142.7 1741.2 129.7C1824 116.7 1907 107.3 1948.5 102.7L1990 98L1990 0L1948.5 0C1907 0 1824 0 1741.2 0C1658.3 0 1575.7 0 1492.8 0C1410 0 1327 0 1244 0C1161 0 1078 0 995 0C912 0 829 0 746.2 0C663.3 0 580.7 0 497.8 0C415 0 332 0 249 0C166 0 83 0 41.5 0L0 0Z" fill="#dbb498"></path><path d="M0 66L41.5 73C83 80 166 94 249 94C332 94 415 80 497.8 78.5C580.7 77 663.3 88 746.2 98.2C829 108.3 912 117.7 995 116.2C1078 114.7 1161 102.3 1244 101.3C1327 100.3 1410 110.7 1492.8 108.8C1575.7 107 1658.3 93 1741.2 92C1824 91 1907 103 1948.5 109L1990 115L1990 0L1948.5 0C1907 0 1824 0 1741.2 0C1658.3 0 1575.7 0 1492.8 0C1410 0 1327 0 1244 0C1161 0 1078 0 995 0C912 0 829 0 746.2 0C663.3 0 580.7 0 497.8 0C415 0 332 0 249 0C166 0 83 0 41.5 0L0 0Z" fill="#d98c75"></path><path d="M0 35L41.5 35C83 35 166 35 249 42.2C332 49.3 415 63.7 497.8 70C580.7 76.3 663.3 74.7 746.2 72.2C829 69.7 912 66.3 995 64.7C1078 63 1161 63 1244 69.7C1327 76.3 1410 89.7 1492.8 90.7C1575.7 91.7 1658.3 80.3 1741.2 72.3C1824 64.3 1907 59.7 1948.5 57.3L1990 55L1990 0L1948.5 0C1907 0 1824 0 1741.2 0C1658.3 0 1575.7 0 1492.8 0C1410 0 1327 0 1244 0C1161 0 1078 0 995 0C912 0 829 0 746.2 0C663.3 0 580.7 0 497.8 0C415 0 332 0 249 0C166 0 83 0 41.5 0L0 0Z" fill="#d45e65"></path><path d="M0 57L41.5 51.8C83 46.7 166 36.3 249 37C332 37.7 415 49.3 497.8 49.5C580.7 49.7 663.3 38.3 746.2 30.2C829 22 912 17 995 22.7C1078 28.3 1161 44.7 1244 53.7C1327 62.7 1410 64.3 1492.8 62.2C1575.7 60 1658.3 54 1741.2 45C1824 36 1907 24 1948.5 18L1990 12L1990 0L1948.5 0C1907 0 1824 0 1741.2 0C1658.3 0 1575.7 0 1492.8 0C1410 0 1327 0 1244 0C1161 0 1078 0 995 0C912 0 829 0 746.2 0C663.3 0 580.7 0 497.8 0C415 0 332 0 249 0C166 0 83 0 41.5 0L0 0Z" fill="#c62368"></path></svg>
+<svg id="visual" viewBox="0 0 1900 340" width="1900" height="340"version="1.1"><g stroke-width="1" strokeLinejoin="bevel"><path d="M905.9 131.3L1006.1 214.7L1014.1 89.3Z" fill="#13518e" stroke="#13518e"></path><path d="M905.9 131.3L885.9 253.7L1006.1 214.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1140.2 86.3L1045.1 0L1014.1 89.3Z" fill="#252b37" stroke="#252b37"></path><path d="M1014.1 89.3L849.9 0L905.9 131.3Z" fill="#244067" stroke="#244067"></path><path d="M1006.1 214.7L1140.2 86.3L1014.1 89.3Z" fill="#252b37" stroke="#252b37"></path><path d="M1045.1 0L849.9 0L1014.1 89.3Z" fill="#263043" stroke="#263043"></path><path d="M905.9 131.3L747.8 142.3L885.9 253.7Z" fill="#252b37" stroke="#252b37"></path><path d="M885.9 253.7L1024.1 340L1006.1 214.7Z" fill="#13518e" stroke="#13518e"></path><path d="M1006.1 214.7L1169.2 207.7L1140.2 86.3Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M1024.1 340L1169.2 207.7L1006.1 214.7Z" fill="#01579b" stroke="#01579b"></path><path d="M734.8 340L878.9 340L885.9 253.7Z" fill="#263043" stroke="#263043"></path><path d="M885.9 253.7L878.9 340L1024.1 340Z" fill="#01579b" stroke="#01579b"></path><path d="M849.9 0L747.8 142.3L905.9 131.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1322.4 87.3L1172.2 0L1140.2 86.3Z" fill="#244067" stroke="#244067"></path><path d="M1140.2 86.3L1172.2 0L1045.1 0Z" fill="#27364f" stroke="#27364f"></path><path d="M1024.1 340L1170.2 340L1169.2 207.7Z" fill="#212121" stroke="#212121"></path><path d="M1169.2 207.7L1322.4 87.3L1140.2 86.3Z" fill="#23262c" stroke="#23262c"></path><path d="M747.8 142.3L712.8 228.7L885.9 253.7Z" fill="#252b37" stroke="#252b37"></path><path d="M849.9 0L731.8 0L747.8 142.3Z" fill="#252b37" stroke="#252b37"></path><path d="M747.8 142.3L606.6 141.3L712.8 228.7Z" fill="#214674" stroke="#214674"></path><path d="M712.8 228.7L734.8 340L885.9 253.7Z" fill="#01579b" stroke="#01579b"></path><path d="M1170.2 340L1306.4 243.7L1169.2 207.7Z" fill="#214674" stroke="#214674"></path><path d="M1306.4 243.7L1322.4 87.3L1169.2 207.7Z" fill="#244067" stroke="#244067"></path><path d="M731.8 0L606.6 141.3L747.8 142.3Z" fill="#23262c" stroke="#23262c"></path><path d="M712.8 228.7L610.6 253.7L734.8 340Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1322.4 87.3L1323.4 0L1172.2 0Z" fill="#23262c" stroke="#23262c"></path><path d="M606.6 141.3L610.6 253.7L712.8 228.7Z" fill="#13518e" stroke="#13518e"></path><path d="M1170.2 340L1312.4 340L1306.4 243.7Z" fill="#252b37" stroke="#252b37"></path><path d="M1306.4 243.7L1448.5 129.3L1322.4 87.3Z" fill="#23262c" stroke="#23262c"></path><path d="M458.5 340L601.6 340L610.6 253.7Z" fill="#263043" stroke="#263043"></path><path d="M610.6 253.7L601.6 340L734.8 340Z" fill="#252b37" stroke="#252b37"></path><path d="M731.8 0L570.6 0L606.6 141.3Z" fill="#27364f" stroke="#27364f"></path><path d="M606.6 141.3L451.5 199.7L610.6 253.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1455.5 223.7L1448.5 129.3L1306.4 243.7Z" fill="#01579b" stroke="#01579b"></path><path d="M1322.4 87.3L1455.5 0L1323.4 0Z" fill="#263043" stroke="#263043"></path><path d="M1443.5 340L1455.5 223.7L1306.4 243.7Z" fill="#263043" stroke="#263043"></path><path d="M1579.7 0L1455.5 0L1448.5 129.3Z" fill="#244067" stroke="#244067"></path><path d="M1448.5 129.3L1455.5 0L1322.4 87.3Z" fill="#23262c" stroke="#23262c"></path><path d="M1312.4 340L1443.5 340L1306.4 243.7Z" fill="#01579b" stroke="#01579b"></path><path d="M419.5 137.3L451.5 199.7L606.6 141.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M451.5 199.7L458.5 340L610.6 253.7Z" fill="#212121" stroke="#212121"></path><path d="M570.6 0L419.5 137.3L606.6 141.3Z" fill="#01579b" stroke="#01579b"></path><path d="M451.5 199.7L320.3 340L458.5 340Z" fill="#244067" stroke="#244067"></path><path d="M570.6 0L433.5 0L419.5 137.3Z" fill="#01579b" stroke="#01579b"></path><path d="M1629.7 106.3L1579.7 0L1448.5 129.3Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M1598.7 231.7L1448.5 129.3L1455.5 223.7Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M1597.7 340L1598.7 231.7L1455.5 223.7Z" fill="#212121" stroke="#212121"></path><path d="M1443.5 340L1597.7 340L1455.5 223.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1598.7 231.7L1629.7 106.3L1448.5 129.3Z" fill="#01579b" stroke="#01579b"></path><path d="M1754.8 134.3L1629.7 106.3L1598.7 231.7Z" fill="#263043" stroke="#263043"></path><path d="M433.5 0L316.3 88.3L419.5 137.3Z" fill="#01579b" stroke="#01579b"></path><path d="M270.3 249.7L320.3 340L451.5 199.7Z" fill="#01579b" stroke="#01579b"></path><path d="M270.3 249.7L451.5 199.7L419.5 137.3Z" fill="#252b37" stroke="#252b37"></path><path d="M433.5 0L296.3 0L316.3 88.3Z" fill="#244067" stroke="#244067"></path><path d="M316.3 88.3L270.3 249.7L419.5 137.3Z" fill="#244067" stroke="#244067"></path><path d="M169.2 254.7L270.3 249.7L147.2 94.3Z" fill="#212121" stroke="#212121"></path><path d="M1755.8 240.7L1754.8 134.3L1598.7 231.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M1629.7 106.3L1778.8 0L1579.7 0Z" fill="#13518e" stroke="#13518e"></path><path d="M1597.7 340L1755.8 240.7L1598.7 231.7Z" fill="#252b37" stroke="#252b37"></path><path d="M1597.7 340L1752.8 340L1755.8 240.7Z" fill="#244067" stroke="#244067"></path><path d="M147.2 94.3L270.3 249.7L316.3 88.3Z" fill="#252b37" stroke="#252b37"></path><path d="M270.3 249.7L145.2 340L320.3 340Z" fill="#13518e" stroke="#13518e"></path><path d="M1900 83.3L1778.8 0L1754.8 134.3Z" fill="#13518e" stroke="#13518e"></path><path d="M1754.8 134.3L1778.8 0L1629.7 106.3Z" fill="#263043" stroke="#263043"></path><path d="M1900 206.7L1754.8 134.3L1755.8 240.7Z" fill="#13518e" stroke="#13518e"></path><path d="M296.3 0L166.2 0L316.3 88.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M166.2 0L147.2 94.3L316.3 88.3Z" fill="#263b5b" stroke="#263b5b"></path><path d="M0 340L145.2 340L169.2 254.7Z" fill="#23262c" stroke="#23262c"></path><path d="M169.2 254.7L145.2 340L270.3 249.7Z" fill="#23262c" stroke="#23262c"></path><path d="M1900 340L1900 206.7L1755.8 240.7Z" fill="#23262c" stroke="#23262c"></path><path d="M1900 206.7L1900 83.3L1754.8 134.3Z" fill="#01579b" stroke="#01579b"></path><path d="M1900 83.3L1900 0L1778.8 0Z" fill="#244067" stroke="#244067"></path><path d="M1752.8 340L1900 340L1755.8 240.7Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M0 0L0 140.3L147.2 94.3Z" fill="#1c4c81" stroke="#1c4c81"></path><path d="M147.2 94.3L0 203.7L169.2 254.7Z" fill="#263b5b" stroke="#263b5b"></path><path d="M0 140.3L0 203.7L147.2 94.3Z" fill="#212121" stroke="#212121"></path><path d="M166.2 0L0 0L147.2 94.3Z" fill="#01579b" stroke="#01579b"></path><path d="M0 203.7L0 340L169.2 254.7Z" fill="#27364f" stroke="#27364f"></path></g></svg>
     </div>
     <Footer/>
     </div>

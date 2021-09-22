@@ -8,26 +8,10 @@
 	.list {
 		display: block;
 	}
-	#navbarlist {
-		width: 100%;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		z-index: 25;
-		height: 0px;
-	}
 }
 @media only screen and (min-width: 600px) {
 	.switch {
 		display: block;
-	}
-	#navbarlist {
-		width: 100%;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		z-index: 25;
-		height: 0px;
 	}
 }
 @media only screen and (min-width: 768px) {
@@ -36,13 +20,6 @@
 	}
 	.switch {
 		display: block;
-	}
-	#navbarlist {
-		width: 100%;
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		height: 0px;
 	}
 }
 @media only screen and (min-width: 992px) {
@@ -58,13 +35,6 @@
 	.list {
 		display: flex;
 	}
-	#navbarlist {
-		position: initial;
-		padding: initial;
-		width: initial;
-		height: initial;
-		display: flex;
-	}
 }
 @media only screen and (min-width: 1200px) {
 	.exitbar {
@@ -77,13 +47,6 @@
 		display: none;
 	}
 	.list {
-		display: flex;
-	}
-	#navbarlist {
-		position: initial;
-		padding: initial;
-		width: initial;
-		height: initial;
 		display: flex;
 	}
 }
@@ -129,10 +92,7 @@
 	top: 30px;
 	right: 30px;
 }
-#navbarlist {
-	transition: 0.5s;
-	overflow: hidden;
-}
+
 .buttonsbar00 {
 	width: 100%;
 	overflow: hidden;

@@ -1,13 +1,13 @@
 :root {
-	--primary-color: #e8e6e3;
-	--secondary-color: #eb8686;
+	--primary-color: #23262c;
+	--secondary-color: #03a9f4;
 	--font-color: #596174;
 	--bg-color: #f4eded;
 	--heading-color: #292922;
 }
 [data-theme="dark"] {
-	--primary-color: #596174;
-	--secondary-color: #c34468;
+	--primary-color: #23262c;
+	--secondary-color: #01579b;
 	--font-color: #e8e6e3;
 	--bg-color: #292922;
 	--heading-color: #f4eded;

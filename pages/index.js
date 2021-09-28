@@ -187,7 +187,7 @@ function Home() {
 
 
 
-    <Col id="l2" className="resizable" style={{backgroundColor:"var(--primary-color)"}}>
+  <Col id="l2" className="resizable" style={{backgroundColor:"var(--primary-color)"}}>
       <Statistic title="Experience" value={"3years"} />
       <Timeline>
         <Timeline.Item>Music Culture and Arts

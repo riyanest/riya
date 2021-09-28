@@ -2,30 +2,6 @@ import Image from 'next/image';
 import React from 'react';
 class Header extends React.Component {
         render(){
-
-                if (typeof window !== "undefined") {
-                        const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-      
-        if (currentTheme === 'dark') {
-            toggleSwitch.checked = true;
-        }
-    }
-    
-    function switchTheme(e) {
-        if (e.target.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        }
-        else {        document.documentElement.setAttribute('data-theme', 'light');
-              localStorage.setItem('theme', 'light');
-        }    
-    }
-    
-    toggleSwitch.addEventListener('change', switchTheme, false);
-                      }
         
         function control(yolo)
         {if(yolo==1){
@@ -68,16 +44,9 @@ if (currentTheme) {
         </ul>
         <ul className="navbarlist">         
                     <button className="navbarbutton switchsvg exitbar" type="button" onClick={()=>control(0)}>X</button>
-                    <li className="heading switchsvg" onClick="">Services</li>
-                    <li className="heading switchsvg" onClick="">Scope</li>
-                    <li className="heading switchsvg" onClick="">Terms</li>
-                    <div className="theme-switch-wrapper">
-                            <label className="theme-switch" htmlFor="checkbox">
-                        <input type="checkbox" id="checkbox" />
-                        <div className="slider round"></div>
-                        </label>
-                        </div>
-                    </ul>
+                    <li className="heading switchsvg"><a href="#l2">Experience</a></li>
+                    <li className="heading switchsvg"><a href="#l1">Gallery</a></li>
+                     </ul>
 
     </div>
     <button className="navbarbutton switch" onClick={()=>control(1)} style={{position: "fixed",bottom: "2%",right: "2%",height:"50px",width:"50px",borderRadius:"50%",backgroundColor:"var(--bg-color)",border:"2px solid var(--secondary-color)",zIndex:"999"}}>

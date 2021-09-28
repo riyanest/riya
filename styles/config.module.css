@@ -1,16 +1,14 @@
 :root {
 	--primary-color: #23262c;
-	--secondary-color: #03a9f4;
+	--secondarylt-color: #03a9f4;
+	--secondary-color: #01579b;
 	--font-color: #596174;
-	--bg-color: #f4eded;
+	--fontlt-color: #e8e6e3;
+	--bg-color: #292922;
+	--headinglt-color: #f4eded;
 	--heading-color: #292922;
 }
 [data-theme="dark"] {
-	--primary-color: #23262c;
-	--secondary-color: #01579b;
-	--font-color: #e8e6e3;
-	--bg-color: #292922;
-	--heading-color: #f4eded;
 }
 a {
 	z-index: 0;
@@ -106,17 +104,17 @@ a:hover {
 	fill: var(--alpha);
 }
 .contactheader {
-	color: var(--bg-color);
+	color: var(--font-color);
 }
 .contactfield {
 	color: var(--bg-color);
 }
 .contactbutton {
-	color: var(--bg-color);
+	color: var(--font-color);
 }
 .contactbutton:hover {
-	border: 2px solid var(--font-color);
-	color: var(--font-color);
+	border: 2px solid var(--secondary-color);
+	color: var(--secondary-color);
 }
 .servicelist {
 	background-color: var(--alpha);
@@ -128,9 +126,26 @@ a:hover {
 }
 .copywright {
 	background-color: var(--secondary-color);
+	color: "var(--primary-color)" !important;
 }
 ::placeholder {
 	/* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: var(--bg-color);
+	color: var(--font-color);
 	opacity: 1; /* Firefox */
+}
+
+.ant-timeline-item-tail {
+	border-left: 2px solid var(--font-color) !important;
+}
+.ant-timeline-item-head {
+	background-color: var(--font-color);
+}
+.ant-statistic-title {
+	color: var(--font-color) !important;
+}
+.ant-statistic-content-value {
+	color: var(--font-color) !important;
+}
+.ant-timeline-item-content {
+	color: var(--font-color) !important;
 }

@@ -36,9 +36,8 @@ function Footer(props) {
                 <div id="quicklinks" className="cardlayout">
                         <ul className="list">
                                 <h2 className="logofont">Quick Links</h2><br/>
-                                <li><a id="flink" href="">Home</a></li><br/>
-                                <li><a id="flink" href="">Services</a></li><br/>
-                                <li><a id="flink" href="">Scope</a></li><br/>
+                                <li><a id="flink" href="">Experience</a></li><br/>
+                                <li><a id="flink" href="">Gallery</a></li><br/>
                         </ul>
                 </div>
 
@@ -46,16 +45,14 @@ function Footer(props) {
                         <ul className="list">
                                 <h2 className="logofont">Support</h2><br/>
                                 <li><a id="flink" href="">Chat-with-us</a></li><br/>
-                                <li><a id="flink" href="">Terms</a></li><br/>
-                                <li><a id="flink" href="">Site-map</a></li><br/>    
-                                <li><a id="flink" href="">About-us</a></li><br/>                            
+                                <li><a id="flink" href="">Site-map</a></li><br/>                            
                         </ul>
                 </div>
 
         </div>
         <div id="verticalline"></div>
         <div >
-                <div className="copywright " style={{padding:"20px"}}>2020Riya Qureshi All rights reserved </div>
+                <div className="copywright " style={{padding:"20px",color:"black"}}>2020Riya Qureshi All rights reserved </div>
         </div>
 </div>
     )

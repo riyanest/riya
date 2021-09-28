@@ -62,7 +62,7 @@ function Home() {
       <Header/>
 <div style={{backgroundColor:" var(--primary-color)",overflow: 'hidden',width:"100%"}}>
   <div style={{height:"540px",position: 'relative',overflow: 'hidden',width:"100%"}}>
-  <svg id="visual" viewBox="0 0 1990 540" width="1990" height="540" version="1.1"><defs><filter id="blur1" x="-10%" y="-10%"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation="304" result="effect1_foregroundBlur"></feGaussianBlur></filter></defs><rect width="1990" height="540" fill="#6600FF"></rect><g filter="url(#blur1)"><circle cx="906" cy="352" fill="#00CC99" r="675"></circle><circle cx="1747" cy="316" fill="#6600FF" r="675"></circle><circle cx="129" cy="48" fill="#00CC99" r="675"></circle><circle cx="1294" cy="204" fill="#00CC99" r="675"></circle><circle cx="780" cy="11" fill="#6600FF" r="675"></circle><circle cx="468" cy="413" fill="#00CC99" r="675"></circle></g></svg>
+  <svg id="visual" viewBox="0 0 1990 540" width="1990" height="540" version="1.1"><defs><filter id="blur1" x="-10%" y="-10%"><feFlood floodOpacity="0" result="BackgroundImageFix"></feFlood><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend><feGaussianBlur stdDeviation="304" result="effect1_foregroundBlur"></feGaussianBlur></filter></defs><rect width="1990" height="540" fill="#6600FF"></rect><g filter="url(#blur1)"><circle cx="906" cy="352" fill="#00CC99" r="675"></circle><circle cx="1747" cy="316" fill="#6600FF" r="675"></circle><circle cx="129" cy="48" fill="#00CC99" r="675"></circle><circle cx="1294" cy="204" fill="#00CC99" r="675"></circle><circle cx="780" cy="11" fill="#6600FF" r="675"></circle><circle cx="468" cy="413" fill="#00CC99" r="675"></circle></g></svg>
   <img style={{position: "absolute",right: "10%",top:"140px",width:"300px",zIndex:"200"}} src="riyadpmobg.png"/>
   <span  
         style={{color:"var(--primary-color)",
@@ -219,10 +219,10 @@ Member- Subhead-Chairperson.</Timeline.Item>
       </Col>    
 
 <Carousel autoplay className="resizable" style={{backgroundColor:"var(--primary-color)"}}>
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RPtSuYtdAFg?start=389" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4_3yBGXGqfI?start=150" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dx6l8P05rB4?start=510" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wYLwQ7qwflk?start=13" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RPtSuYtdAFg?start=389" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4_3yBGXGqfI?start=150" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dx6l8P05rB4?start=510" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wYLwQ7qwflk?start=13" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 </Carousel>
 
     <Contactform/>
